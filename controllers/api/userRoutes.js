@@ -24,12 +24,14 @@ router.post("/", async (req, res) => {
 // /api/users/login
 router.post("/login", async (req, res) => {
   try {
-    // check if input email exists in database
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    // check if input username exists in database
+    const userData = await User.findOne({
+      where: { username: req.body.username },
+    });
     if (!userData) {
       res
         .status(400)
-        .json({ message: "Incorrect email or password, please try again" });
+        .json({ message: "Incorrect username or password, please try again" });
       return;
     }
     // check if the input password matches the user's password in database
@@ -38,7 +40,7 @@ router.post("/login", async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: "Incorrect email or password, please try again" });
+        .json({ message: "Incorrect username or password, please try again" });
       return;
     }
     // save the user's session info
