@@ -18,16 +18,18 @@
     <div>
         <header>
         {{#if logged_in}}
-            <nav class="navbar navbar-expand-lg navbar-light bg-primary text-dark">
-                <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-primary text-dark d-grid;">
+                <div class="container justify-content-start">
+                    <a class="navbar-brand text-dark" href="/">Home</a>
                     <a class="navbar-brand text-dark" href="/dashboard">Dashboard</a>
                     <button class="btn btn-danger" id="logout">Logout</button>
                 </div>
+                
             </nav>
             {{else}}
             <nav class="navbar navbar-expand-lg navbar-light bg-primary">
                 <div class="container">
-                    <a class="navbar-brand text-dark" href="/login">Login</a>
+                    <a class="btn btn-outline-light" href="/login">Login</a>
                 </div>
             </nav>
         {{/if}}
