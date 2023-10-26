@@ -25,27 +25,28 @@ const newFormHandler = async (event) => {
 };
 
 // Function to delete a post
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute("data-id")) {
-    // Get the post ID from the button's data attribute
-    const id = event.target.getAttribute("data-id");
-    // Send a DELETE request
-    const response = await fetch(`/api/posts/${id}`, {
+const delButton = document.querySelector("#del-btn");
+
+delButton.addEventListener("click", async function () {
+  const postId = this.getAttribute("data-id");
+  try {
+    const response = await fetch(`/api/posts/${postId}`, {
       method: "DELETE",
     });
 
     if (response.ok) {
-      document.location.replace("/dashboard");
+      console.log("The post has been deleted successfully");
+      // Remove the closest item with class post container
+      this.closest(".post-container").remove();
+      document.location.replace("/");
     } else {
-      alert("Failed to delete post");
+      console.error("Error deleting post:", response.status);
     }
+  } catch (err) {
+    console.error("Error deleting post:", err);
   }
-};
+});
 
 document
   .querySelector(".new-post-form")
   .addEventListener("submit", newFormHandler);
-
-document
-  .querySelector(".post-list")
-  .addEventListener("click", delButtonHandler);
