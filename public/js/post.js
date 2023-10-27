@@ -1,4 +1,6 @@
 // Create a new post form
+const createButton = document.querySelector("#create-btn");
+
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -25,28 +27,28 @@ const newFormHandler = async (event) => {
 };
 
 // Function to delete a post
-const delButton = document.querySelector("#del-btn");
+// const delButton = document.querySelectorAll(".del-btn").forEach();
 
-delButton.addEventListener("click", async function () {
-  const postId = this.getAttribute("data-id");
-  try {
-    const response = await fetch(`/api/posts/${postId}`, {
-      method: "DELETE",
-    });
+document.querySelectorAll(".del-btn").forEach((button) => {
+  button.addEventListener("click", async function () {
+    const postId = this.getAttribute("data-id");
+    try {
+      const response = await fetch(`/api/posts/${postId}`, {
+        method: "DELETE",
+      });
 
-    if (response.ok) {
-      console.log("The post has been deleted successfully");
-      // Remove the closest item with class post container
-      this.closest(".post-container").remove();
-      document.location.replace("/");
-    } else {
-      console.error("Error deleting post:", response.status);
+      if (response.ok) {
+        console.log("The post has been deleted successfully");
+        // Remove the closest item with class post container
+        this.closest(".post-container").remove();
+        document.location.replace("/dashboard");
+      } else {
+        console.error("Error deleting post:", response.status);
+      }
+    } catch (err) {
+      console.error("Error deleting post:", err);
     }
-  } catch (err) {
-    console.error("Error deleting post:", err);
-  }
+  });
 });
 
-document
-  .querySelector(".new-post-form")
-  .addEventListener("submit", newFormHandler);
+createButton.addEventListener("click", () => newFormHandler);
