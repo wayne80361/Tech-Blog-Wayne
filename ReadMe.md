@@ -59,6 +59,8 @@ You will see the `home`page after you open the link [above](https://tech-blog-wa
 
 - And the `Dashboard` feature will pop out on the top.
 
+- And the `Logout` button will replace `Login` button on the top.
+
 ## Credits
 
 Class REPO examples, and Wayne
