@@ -20,7 +20,7 @@
 - [Usage](#usage)
   - [Home](#home)
   - [Dashboard](#dashboard)
-  - [Login/Signup](#login/signup)
+  - [Login/Signup](#login-and-signup)
 - [Credits](#credits)
 - [License](#license-and-badges)
 - [Additional Info](#additional-infomation)
@@ -51,7 +51,7 @@ You will see the `home`page after you open the link [above](https://tech-blog-wa
 
   - You can `delete` a Post with the delete button next to a post title.
 
-### Login/Signup
+### Login-and-Signup
 
 - Login and Signup takes username and password.
 
