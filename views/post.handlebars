@@ -6,5 +6,9 @@
       <p>{{post.content}}</p>
     </div>
 </div>
+<div >
+    <h5>by {{post.user.username}}</h5>
+    <h6>on {{format_date post.date_created}}</h6>
+</div>
 
 <script src="/js/post.js"></script>
