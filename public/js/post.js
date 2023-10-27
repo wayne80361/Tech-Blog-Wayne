@@ -1,7 +1,7 @@
 // Create a new post form
-const createButton = document.querySelector("#create-btn");
+const createButton = document.querySelector(".new-post-form");
 
-const newFormHandler = async (event) => {
+const newPostHandler = async (event) => {
   event.preventDefault();
 
   const title = document.querySelector("#post-title").value.trim();
@@ -10,12 +10,10 @@ const newFormHandler = async (event) => {
   // Check if both title and content have any value
   if (title && content) {
     // Send a POST request
-    const response = await fetch(`/api/posts`, {
+    const response = await fetch("/api/posts", {
       method: "POST",
       body: JSON.stringify({ title, content }),
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
@@ -27,8 +25,6 @@ const newFormHandler = async (event) => {
 };
 
 // Function to delete a post
-// const delButton = document.querySelectorAll(".del-btn").forEach();
-
 document.querySelectorAll(".del-btn").forEach((button) => {
   button.addEventListener("click", async function () {
     const postId = this.getAttribute("data-id");
@@ -51,4 +47,4 @@ document.querySelectorAll(".del-btn").forEach((button) => {
   });
 });
 
-createButton.addEventListener("click", () => newFormHandler);
+createButton.addEventListener("submit", newPostHandler);
