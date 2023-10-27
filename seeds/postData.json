@@ -17,6 +17,62 @@
       "content": "and this is the content.",
       "date_created": "08/08/2023",
       "user_id": 3
+    },
+    {
+      "title": "ABC 1 Sal",
+      "content": "DEF :).",
+      "date_created": "10/26/2023",
+      "user_id": 1
+    },
+    {
+      "title": "XYZ 2, Ler",
+      "content": "w befor it.",
+      "date_created": "10/05/2023",
+      "user_id": 2
+
+    },
+    {
+      "title": "this is a title, Amiko",
+      "content": "and this is the content.",
+      "date_created": "08/08/2023",
+      "user_id": 3
+    },
+    {
+      "title": "ABC 1 Sal",
+      "content": "DEF :).",
+      "date_created": "10/26/2023",
+      "user_id": 1
+    },
+    {
+      "title": "XYZ 2, Ler",
+      "content": "w befor it.",
+      "date_created": "10/05/2023",
+      "user_id": 2
+
+    },
+    {
+      "title": "`23`asd2123tle, Amiko",
+      "content": "and this is the content.",
+      "date_created": "08/08/2023",
+      "user_id": 3
+    },
+    {
+      "title": "tdasdffb vbtle, Amiko",
+      "content": "and this is the content.",
+      "date_created": "08/08/2023",
+      "user_id": 3
+    },
+    {
+      "title": "tes2cvle, Amiko",
+      "content": "and this is the content.",
+      "date_created": "08/08/2023",
+      "user_id": 3
+    },
+    {
+      "title": "ttest, Amiko",
+      "content": "and this is the content.",
+      "date_created": "08/08/2023",
+      "user_id": 3
     }
   ]
   
